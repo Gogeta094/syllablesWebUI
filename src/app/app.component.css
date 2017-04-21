@@ -1,0 +1,19 @@
+.syllables-container{
+    width: 75%;
+    margin: 0px auto;    
+}
+
+.textarea{
+    resize: none;
+    height: 400px;
+}
+
+.bottom-section{
+    padding-top: 25px;
+}
+
+.heading-section{
+    margin-top: 25px;
+    padding-bottom: 45px;
+    text-align: center;
+}

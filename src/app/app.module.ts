@@ -5,16 +5,29 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { alert, buttons, jumbotron, grid } from 'bootstrap-css';
+import { ModalModule } from 'angular2-modal';
+import { BootstrapModalModule } from 'ng2-bootstrap-modal';
+import { SettingsModalComponent } from './settings-modal/settings-modal.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SettingsModalComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    NgbModule.forRoot(),
+    ModalModule.forRoot(),
+    BootstrapModalModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [SettingsModalComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}
