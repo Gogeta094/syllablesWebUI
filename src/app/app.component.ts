@@ -1,21 +1,24 @@
 import { Component, ViewContainerRef, ViewEncapsulation } from '@angular/core';
-import { Modal, BSModalContext } from 'angular2-modal/plugins/bootstrap';
-import { SettingsModalComponent, SettingsModalContext } from './settings-modal/settings-modal.component'
+
+import { SettingsModalComponent } from './settings-modal/settings-modal.component'
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import {MdDialog} from '@angular/material';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [Modal]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
 
-  constructor(vcRef: ViewContainerRef, public modal: Modal) {
-    
+  constructor(private dialog: MdDialog) {
   }
 
   openSettingsModal() {
-    this.modal.open(SettingsModalComponent, new SettingsModalContext())
+    this.dialog.open(SettingsModalComponent, {
+      height: '400px',
+      width: '600px'
+    });
   }
 
   title: string = 'app works!11';

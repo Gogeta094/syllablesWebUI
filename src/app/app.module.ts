@@ -6,27 +6,28 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
-import { alert, buttons, jumbotron, grid } from 'bootstrap-css';
-import { ModalModule } from 'angular2-modal';
-import { BootstrapModalModule } from 'ng2-bootstrap-modal';
+import { alert, buttons, jumbotron, grid, modal } from 'bootstrap-css';
+import { MaterialModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { SettingsModalComponent } from './settings-modal/settings-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SettingsModalComponent
+    SettingsModalComponent 
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    BrowserAnimationsModule,
     NgbModule.forRoot(),
-    ModalModule.forRoot(),
-    BootstrapModalModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [SettingsModalComponent]
+  entryComponents: [ SettingsModalComponent ]
 })
 export class AppModule {
 
