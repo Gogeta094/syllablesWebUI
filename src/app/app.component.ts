@@ -2,7 +2,7 @@ import { Component, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 
 import { SettingsModalComponent } from './settings-modal/settings-modal.component'
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import {MdDialog} from '@angular/material';
+import { MdDialog, MdDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -10,14 +10,16 @@ import {MdDialog} from '@angular/material';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  settings = null;
 
-  constructor(private dialog: MdDialog) {
-  }
+  constructor(private dialog: MdDialog) { }
 
   openSettingsModal() {
-    this.dialog.open(SettingsModalComponent, {
-      height: '400px',
-      width: '600px'
+    let dialogRef = this.dialog.open(SettingsModalComponent, {
+      width: '400px'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+
     });
   }
 
